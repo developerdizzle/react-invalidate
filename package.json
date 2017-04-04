@@ -7,6 +7,7 @@
   "scripts": {
     "build": "babel src -d lib",
     "build:watch": "npm run build -- --watch",
+    "build:demo": "webpack --config demo/webpack.config.babel.js",
     "lint": "./node_modules/.bin/eslint src test",
     "prettier": "prettier --single-quote --trailing-comma es5 --write \"{src,test}/**/*.js\"",
     "flow": "./node_modules/.bin/flow",
@@ -37,7 +38,9 @@
   "license": "MIT",
   "devDependencies": {
     "babel-cli": "^6.23.0",
+    "babel-core": "^6.24.0",
     "babel-eslint": "^7.1.1",
+    "babel-loader": "^6.4.1",
     "babel-plugin-syntax-async-functions": "^6.13.0",
     "babel-plugin-transform-async-to-generator": "^6.22.0",
     "babel-plugin-transform-class-properties": "^6.23.0",
@@ -55,6 +58,7 @@
     "eslint-plugin-jest": "^19.0.1",
     "eslint-plugin-prettier": "^2.0.1",
     "eslint-plugin-react": "^6.10.0",
+    "file-loader": "^0.11.1",
     "flow-bin": "^0.41.0",
     "invariant": "^2.2.2",
     "jest": "^19.0.2",
@@ -62,7 +66,8 @@
     "react": "^15.4.2",
     "react-addons-test-utils": "^15.4.2",
     "react-dom": "^15.4.2",
-    "rimraf": "^2.6.1"
+    "rimraf": "^2.6.1",
+    "webpack": "^2.3.3"
   },
   "jest": {
     "coverageDirectory": "<rootDir>/coverage"
